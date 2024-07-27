@@ -1,0 +1,209 @@
+/* Existing styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+}
+
+.container {
+    max-width: 100%;
+    width: 90%; /* Responsive width */
+    max-width: 400px; /* Max width for larger screens */
+    background-color: #e0f7fa; /* Light neon cyan color */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+/* Ensure dashboard takes full height on mobile screens */
+.dashboard {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%; /* Responsive width */
+    max-width: 400px; /* Max width for larger screens */
+    height: calc(100vh - 40px); /* Full height minus some padding */
+    box-sizing: border-box; /* Include padding in height */
+    position: relative; /* Allow absolute positioning of buttons */
+}
+
+.points-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#points {
+    margin-right: 20px;
+}
+
+#sdaCoins {
+    color: #00796b; /* Use a color that contrasts well */
+}
+
+/* Center the coin vertically */
+.dashboard .coin {
+    margin-top: auto; /* Push the coin up towards the center */
+    margin-bottom: 20px;
+}
+
+.coin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 24px;
+    width: 100px;
+    height: 100px;
+    background-color: gold;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s ease; /* Smooth transition for shadow effect */
+}
+
+/* Show shadow effect on hover */
+.coin:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Larger shadow on hover */
+}
+
+/* Show shadow effect on tap (active state) */
+.coin:active {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Shadow effect when tapped */
+}
+
+/* Container for buttons */
+.button-container {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    position: absolute; /* Position at the bottom */
+    bottom: 10px; /* Space from the bottom */
+    width: 100%; /* Full width of dashboard */
+}
+
+/* Style for buttons */
+#convertPointsButton, #upgradeButton {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #00796b; /* Darker teal color for button */
+    color: white;
+    cursor: pointer;
+    width: 100%; /* Full width button */
+    margin-top: 10px; /* Space between buttons */
+}
+
+#convertPointsButton:hover, #upgradeButton:hover {
+    background-color: #004d40; /* Even darker teal for hover effect */
+}
+
+#sdaCoins {
+    font-weight: bold; /* Make SDA coin count stand out */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container, .dashboard {
+        width: 90%; /* Make containers responsive */
+        padding: 15px;
+    }
+
+    .dashboard {
+        height: calc(100vh - 40px); /* Ensure full height on smaller screens */
+    }
+
+    .coin {
+        width: 80px;
+        height: 80px;
+        font-size: 20px;
+    }
+
+    .coin span {
+        font-size: 12px;
+    }
+
+    .points-container {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container, .dashboard {
+        width: 95%; /* Adjust width for smallest screens */
+        padding: 10px;
+    }
+
+    .dashboard {
+        height: calc(100vh - 20px); /* Adjust height for smallest screens */
+    }
+
+    .coin {
+        width: 60px;
+        height: 60px;
+        font-size: 18px;
+    }
+
+    .coin span {
+        font-size: 10px;
+    }
+
+    .points-container {
+        font-size: 14px;
+    }
+}
+
+/* Sidebar styles */
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    color: white;
+    overflow-x: hidden;
+    transition: 0.3s;
+    transform: translateX(100%); /* Initially hidden */
+    display: none; /* Ensure it's not visible initially */
+}
+
+.sidebar.active {
+    transform: translateX(0); /* Show when active */
+    display: block; /* Ensure it is displayed when active */
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.openbtn {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.sidebar h2, .sidebar p {
+    padding: 16px;
+}
+
+.sidebar button {
+    margin: 16px;
+}

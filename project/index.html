@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In and Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container" id="signinContainer">
+        <h2>Sign In</h2>
+        <form id="signinForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <br><br>
+            <label for="password">Password:</label>
+            <div class="password-container">
+                <input type="password" id="password" name="password" required>
+                <i id="togglePassword" class="fas fa-eye"></i>
+            </div>
+            <br><br>
+            <button type="submit">Sign In</button>
+        </form>
+    </div>
+
+    <div class="dashboard" id="dashboard" style="display: none;">
+        <h2>Welcome <span id="loggedInUser"></span>!</h2>
+        <p>Points: <span id="points">0</span></p>
+        <div class="coin" id="coin"><span>Tap</span></div>
+        <button id="upgradeButton">Upgrade (+1000 points)</button>
+        <button id="convertPointsButton">Convert 1000 Points to 100 SDA Coins</button>
+        <p>SDA Coins: <span id="sdaCoins">0</span></p>
+        <button id="openSidebar">☰</button>
+    </div>
+
+    <div id="sidebar" class="sidebar">
+        <button id="closeSidebar" class="closebtn">&times;</button>
+        <h2>Sidebar Dashboard</h2>
+        <p>Points: <span id="sidebarPoints">0</span></p>
+        <button id="convertSidebarPointsButton">Convert Points (Fee: 10)</button>
+    </div>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
